@@ -52,3 +52,9 @@ kmeans_result <- kmeans(pca_scores_4, centers = k, nstart = 25)
 kmeans_result$cluster
 
 d.film.imputed.1_with_pca$cluster <- kmeans_result$cluster
+
+# Set the path to save the .csv file
+output_file_path <- "/home/dave/work/PCA_FILM/PCA_FILM_RESULTS.csv"
+
+# Export the data frame to a .csv file
+write.csv(d.film.imputed.1_with_pca, file = output_file_path, row.names = FALSE)
